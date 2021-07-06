@@ -1,0 +1,49 @@
+@mixin flexView($direction, $justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+.counter {
+  @include flexView(column, center);
+  background-color: rgb(67, 67, 204);
+  height: 100vh;
+  div {
+    @include flexView(row, space-evenly);
+    p {
+        padding:1rem;
+      background-color: #fff;
+      border-radius: 50%;
+      z-index: 1;
+      font-size: 1rem;
+    }
+    button {
+        background-color: rgba(124, 124, 214, 0.5);
+        padding:1rem 3rem;
+      font-size: 1rem;
+      border: none;
+      &:first-child {
+        margin-right: -2rem;
+        color: white;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+      &:last-child {
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        margin-left: -2rem;
+        font-size: 1rem;
+
+        color: white;
+      }
+    }
+  }
+  button{
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;  
+        color: rgb(67, 67, 204);
+      border: none;
+  }
+}
+
+
